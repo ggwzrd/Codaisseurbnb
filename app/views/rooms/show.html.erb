@@ -26,6 +26,11 @@
       <li><%= !@room.has_heating ? ("<del>Heating</del>").html_safe : "Heating" %></li>
       <li><%= !@room.has_airco ? ("<del>Air Conditioning</del>").html_safe : "Air Conditioning" %></li>
     </ul>
+    <!-- Themes -->
+    <h4>Themes</h4>
+    <% @themes.each do |theme| %>
+      <span class="label label-success"><%= theme.name %></span>
+    <% end %>
 
   </div>
 

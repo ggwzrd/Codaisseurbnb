@@ -7,6 +7,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+    @themes = @room.themes
   end
 
   def new
