@@ -1,0 +1,18 @@
+.navbar{
+  background: #B72A3C;
+  position: fixed;
+  top:0;
+  width: 100%;
+  box-shadow: 0px 1px 1px rgba(0,0,0,0.5);
+}
+.navbar img.logo{
+  width: 50px;
+  height: 50px;
+}
+
+.navbar ul li a{
+  color: #2E2F30;
+}
+.navbar ul li a:hover{
+  color: #FFF;
+}
