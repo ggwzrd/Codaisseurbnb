@@ -23,4 +23,13 @@ RSpec.describe Profile, type: :model do
       it "does not return profiles that don't start with the given letter"
     end
   end
+
+  describe "association with user" do
+    let!(:user) {create :user}
+
+    it "belongs to a user" do
+      profile = user.build_profile
+      expect(user.profile).to eq(profile)
+    end
+  end
 end
