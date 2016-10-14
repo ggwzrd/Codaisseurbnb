@@ -23,7 +23,7 @@ class RoomsController < ApplicationController
         @room.photos.create(image: image)
       end
 
-      redirect_to edit_room_path(@room), notice: "Room successfully created"
+      redirect_to edit_room_path(@room)
     else
       render :new
     end
