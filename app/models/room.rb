@@ -28,7 +28,6 @@ class Room < ApplicationRecord
         return false
       end
     end
-
     true
   end
 end
