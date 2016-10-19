@@ -102,4 +102,21 @@ RSpec.describe Room, type: :model do
       end
     end
   end
+
+  describe "#available during" do
+    let(:host_user) { create :user, email: "host@user.com" }
+    let(:guest_user) { create :user, email: "guest@user.com" }
+
+    let(:room) { create :room, price: 20, user: host_user }
+
+    let!(:existent_booking) { create :booking, room: room, starts_at: 2.days.from_now, ends_at: 6.days.from_now, user: guest_user }
+
+    it "should not include room" do
+      expect(Room.available_during(2.days.from_now, 6.days.from_now)).to_not include(room)
+    end
+
+    it "should include room" do
+      expect(Room.available_during(8.days.from_now, 10.days.from_now)).to include(room)
+    end
+  end
 end

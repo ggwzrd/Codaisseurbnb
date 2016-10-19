@@ -9,6 +9,12 @@ class User < ApplicationRecord
 
          has_one :profile
 
+  scope :active_users, -> {where("last_sign_in_at >= ?", Time.now - 3.months )}
+
+  # def self.active_users
+  #   where("last_sign_in_at >= ?", Time.now - 3.months)
+  # end
+  #
   def has_profile?
    profile.present?
   end
